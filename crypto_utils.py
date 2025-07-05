@@ -27,7 +27,8 @@ def generate_safe_prime(minimum, maximum, num_of_test = 10):
 
 # Find a generator g of the multiplicative group Z_p^*
 # The checks pow(g, 2, p) != 1 and pow(g, q, p) != 1 ensure that g does not have order 2 or q,
-# which means g has the full order p-1 and thus is a generator of the group.
+# which means g has the full order p-1 and thus is a generator of the group
+# Therefore, it is easier to use safe primes
 def find_generator(p, q):
 
     for g in range(p-1 , 1, -1):
@@ -35,4 +36,4 @@ def find_generator(p, q):
         if pow(g, 2, p) != 1 and pow(g, q, p) != 1:
 
             return g
-
+        
